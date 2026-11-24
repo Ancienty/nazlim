@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f2e8">
+  <title>Tanıştığımızdan beri</title>
+  <link rel="icon" href="./assets/sakayik-tomurcugu.webp" type="image/webp">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="gate" id="gate">
+    <div class="gate-card">
+      <div class="gate-art">
+        <img src="./assets/sakayik.webp" alt="" width="960" height="1200" fetchpriority="high">
+      </div>
+      <div class="gate-copy">
+        <h1>Nazlı’ya <em>bir mektup</em></h1>
+        <p id="password-hint">Dünyanın en önemli günü.<br>Hani şu doğum günü. :)</p>
+        <form id="gate-form">
+          <label for="password">Şifre</label>
+          <div class="gate-fields">
+            <input id="password" type="password" inputmode="numeric" maxlength="4" placeholder="GGAA"
+              autocomplete="off" aria-describedby="password-hint password-error">
+            <button class="gate-submit" type="submit">Mektubu aç</button>
+          </div>
+          <p class="gate-error" id="password-error" role="status"></p>
+        </form>
+        <noscript><p class="gate-error">Mektubu açmak için tarayıcında JavaScript’i etkinleştir.</p></noscript>
+      </div>
+    </div>
+  </main>
+
+  <template id="letter-template">
+    <main class="letter">
+      <section class="hero" aria-labelledby="letter-title">
+        <div class="hero-copy">
+          <h1 id="letter-title" tabindex="-1">İyi ki tanıştık, <span class="hero-name"><em>Nazlım</em> <span class="hero-heart">&lt;3</span></span></h1>
+          <p class="hero-date"><time datetime="2026-09-19T23:56:00+03:00">19 Eylül 2026, 23.56</time></p>
+          <div class="counter" role="group" aria-label="Tanıştığımızdan beri geçen süre">
+            <div><span data-counter="days">00</span><span class="counter-unit">Gün</span></div>
+            <div><span data-counter="hours">00</span><span class="counter-unit">Saat</span></div>
+            <div><span data-counter="minutes">00</span><span class="counter-unit">Dakika</span></div>
+            <div><span data-counter="seconds">00</span><span class="counter-unit">Saniye</span></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="./assets/sakayik.webp" alt="Açık pembe şakayık" width="960" height="1200">
+        </div>
+      </section>
+
+      <div class="letter-body">
+        <section class="letter-section" aria-labelledby="story-title">
+          <h2 id="story-title">O gece, <em>23.56</em></h2>
+          <details class="story">
+            <summary class="envelope">
+              <span class="envelope-stamp" aria-hidden="true">23.56</span>
+              <span class="envelope-action"><span class="when-closed">Zarfı aç</span><span class="when-open">Zarfı kapat</span></span>
+            </summary>
+            <p class="story-note">Instagram’da takipleşir takipleşmez birbirimize o aptal videoları atmaya başladık. Şimdi düşününce, bizim tanışmamız ancak böyle olabilirmiş. Birkaç ay sonra seni bu kadar seveceğimi, benim için bu kadar değerli olacağını kim bilebilirdi?</p>
+          </details>
+        </section>
+
+        <section class="letter-section" aria-labelledby="video-title">
+          <h2 id="video-title">Sana <em>bir video daha</em></h2>
+          <div class="video-stage">
+            <video id="nazli-video" aria-labelledby="video-title" width="576" height="1024"
+              preload="none" poster="./assets/video-kapak.webp" controls playsinline>
+              <source src="./assets/nazlima-video.mp4" type="video/mp4">
+              <a href="./assets/nazlima-video.mp4">Videoyu aç</a>
+            </video>
+            <button class="video-start" id="video-start" type="button" aria-controls="nazli-video" hidden>
+              <span class="play-icon" aria-hidden="true"></span> Videoyu oynat
+            </button>
+          </div>
+        </section>
+
+        <section class="letter-section" aria-labelledby="details-title">
+          <h2 id="details-title">Sende hoşuma giden <em>küçük şeyler</em></h2>
+          <ul class="little-things" role="list">
+            <li>Utandığında kızarman.</li>
+            <li>
+              <details class="little-detail">
+                <summary>En salakça şakalarıma bile kahkahalarla gülmen.<span class="note-icon" aria-hidden="true"></span></summary>
+                <p class="little-note">En salak şakama bile öyle bir gülüyorsun ki, bazen ne söylediğimi unutup senin gülüşüne gülüyorum. Sonra sırf o kahkahayı bir daha duymak için aklıma gelen bir sonraki saçmalığı da söylüyorum.</p>
+              </details>
+            </li>
+            <li>
+              <details class="little-detail">
+                <summary>İltifat edince cevap bulamayıp “yaaa” demen.<span class="note-icon" aria-hidden="true"></span></summary>
+                <p class="little-note">Sana iltifat edince bir “yaaa” diyorsun ya, onu bazen mesajda okurken bile sesinle duyuyorum. Sonra durduk yere gülümsüyorum.</p>
+              </details>
+            </li>
+            <li>Dudağının üstündeki o ben.</li>
+            <li>
+              <details class="little-detail">
+                <summary>Canım sıkkınken bana moral vermeye çalışman.<span class="note-icon" aria-hidden="true"></span></summary>
+                <p class="little-note">Canım sıkkınken bunu fark edip bana moral vermeye çalışman aklımda kalıyor. O an beni düşündüğünü bilmek bile iyi geliyor.</p>
+              </details>
+            </li>
+            <li>Bir de saymaya kalksam bu sayfaya sığmayacak onlarca şey.</li>
+          </ul>
+        </section>
+
+        <section class="letter-section" aria-labelledby="dictionary-title">
+          <h2 id="dictionary-title">Futan’ın <em>Nazlı sözlüğü</em></h2>
+          <dl class="dictionary">
+            <div>
+              <dt>Yaaa</dt>
+              <dd>İltifattan sonraki resmî cevap.</dd>
+            </div>
+            <div>
+              <dt>Futanım</dt>
+              <dd>Senden duyunca adım bir anda daha güzel geliyor.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="letter-section" aria-labelledby="song-title">
+          <h2 id="song-title">Sana <em>bir şarkı</em></h2>
+          <div class="song">
+            <p>Seni anan benim için doğurmuş, canım. :)</p>
+            <iframe
+              src="https://open.spotify.com/embed/track/4ZuWANWfNdumZdkzyvoVk8?utm_source=generator&amp;si=372c9413b3ee4869"
+              title="Spotify oynatıcısı — Ebru Yaşar" width="100%" height="352" loading="lazy" allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <a href="https://open.spotify.com/track/4ZuWANWfNdumZdkzyvoVk8" target="_blank" rel="noopener noreferrer">Spotify’da aç</a>
+          </div>
+        </section>
+
+        <footer class="sign-off">
+          <p>İyi ki seni tanımışım Nazlı.<br>Seni çok seviyorum. :)</p>
+          <div class="signature">
+            <span>Futan’ından sana</span>
+            <button id="peony-bud" class="peony-bud" type="button" aria-label="Şakayık tomurcuğu">
+              <img src="./assets/sakayik-tomurcugu.webp" alt="" width="132" height="121" loading="lazy">
+            </button>
+          </div>
+        </footer>
+      </div>
+
+      <div id="heart-pop" class="heart-pop" aria-hidden="true" hidden><span></span></div>
+      <p id="heart-status" class="visually-hidden" role="status"></p>
+    </main>
+  </template>
+</body>
+</html>
