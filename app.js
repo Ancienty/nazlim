@@ -94,29 +94,12 @@ function enableHeart() {
   });
 }
 
-function enableVideo() {
-  const video = document.querySelector("#nazli-video");
-  const startButton = document.querySelector("#video-start");
-
-  video.controls = false;
-  startButton.hidden = false;
-  startButton.addEventListener("click", () => {
-    video.controls = true;
-    startButton.hidden = true;
-    video.focus({ preventScroll: true });
-    video.play().catch(() => {
-      // In browsers that reject scripted playback, the native play control is available.
-    });
-  });
-}
-
 function openLetter(focusTitle) {
   const template = document.querySelector("#letter-template");
-  gate.replaceWith(template.content.cloneNode(true));
+  gate.replaceWith(document.importNode(template.content, true));
   template.remove();
   startCounter();
   enableHeart();
-  enableVideo();
 
   if (focusTitle) {
     document.querySelector(".letter").classList.add("letter-entering");

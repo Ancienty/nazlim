@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f8f2e8">
   <title>Tanıştığımızdan beri</title>
   <link rel="icon" href="./assets/sakayik-tomurcugu.webp" type="image/webp">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=2">
+  <script src="./app.js?v=2" defer></script>
 </head>
 <body>
   <main class="gate" id="gate">
@@ -65,15 +65,13 @@
 
         <section class="letter-section" aria-labelledby="video-title">
           <h2 id="video-title">Sana <em>bir video daha</em></h2>
-          <div class="video-stage">
-            <video id="nazli-video" aria-labelledby="video-title" width="576" height="1024"
-              preload="none" poster="./assets/video-kapak.webp" controls playsinline>
-              <source src="./assets/nazlima-video.mp4" type="video/mp4">
-              <a href="./assets/nazlima-video.mp4">Videoyu aç</a>
-            </video>
-            <button class="video-start" id="video-start" type="button" aria-controls="nazli-video" hidden>
-              <span class="play-icon" aria-hidden="true"></span> Videoyu oynat
-            </button>
+          <div class="video-player">
+            <div class="video-stage">
+              <video id="nazli-video" aria-labelledby="video-title" width="576" height="1024"
+                src="./assets/nazlima-video.mp4" poster="./assets/video-kapak.webp" preload="metadata"
+                controls playsinline></video>
+            </div>
+            <a href="./assets/nazlima-video.mp4" target="_blank" rel="noopener noreferrer">Videoyu ayrı aç</a>
           </div>
         </section>
 
